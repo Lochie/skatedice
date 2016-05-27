@@ -1,0 +1,229 @@
+@import url('//fonts.googleapis.com/css?family=Oswald:300,400,700');
+@font: "Oswald", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+
+@white		: #ffffff;
+@black		: #000000;
+
+@red		: #ca1414;
+@blue		: #143bca;
+
+@fadeBlack	: fade(@black,75);
+
+
+
+*{outline:0;padding:0;margin:0;border:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+
+html,body{
+	overflow: hidden;
+	height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+}
+body{
+	font:16px @font;
+	font-weight:400;
+	text-align: center;
+	text-transform: uppercase;
+	color: @white;
+	background: @black url('../assets/bg_2.jpg') no-repeat center;
+	background-size: cover;
+}
+
+@import "perfect-scrollbar.less";
+
+
+.container{
+	display: block;
+	margin: 0 auto;
+	max-width: 560px;
+}
+
+a{
+	color: @white;
+	text-decoration: none;
+}
+
+.logo{
+	display: block;
+	margin: 0 auto;
+	max-width: 270px;
+	img{
+		display: block;
+		width: 100%;
+	}
+}
+.header{
+	padding: 1.1em 1.7em 3em;
+}
+.footer a{
+	display: block;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0.4em 1em;
+	font-size: 0.7em;
+	text-align: left;
+	color: #fff;
+	background: @blue;
+	&:hover{ background: mix(@white,@blue,15); }
+	img{
+		display: inline-block;
+		margin: 0 0.5em 0 0;
+		width: 1.2em;
+	}
+}
+
+
+#skatedice{
+	.trick{
+		position: relative;
+		display: block;
+	}
+
+	.dice{
+		text-align: center;
+		.dgroup{
+			display: inline-block;
+			vertical-align: middle;
+			width: 8.9em;
+		}
+		.die{
+			border-radius:0.4em;
+			display: inline-block;
+			overflow: hidden;
+			margin: 0 0.15em;
+			width: 4.5em;
+			height: 4.5em;
+			font-size: 0.9em;
+			color: #fff;
+			background:@red;
+			.txt{
+				display: table;
+				width: 100%;
+				height: 100%;
+				span{
+					display: table-cell;
+					vertical-align: middle;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.alias{
+		margin: 0.45em auto 0;
+		font-size: 1.5em;
+		line-height: 1.6em;
+		background: @fadeBlack;
+		#alias{
+			position: relative;
+			padding: 0 0.2em;
+			.abd{
+				color: @red;
+				&:before{
+					content: " ";
+					display: inline-block;
+					vertical-align:top;
+					position: relative;
+					margin:0.6em 0.4em 0;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: .25em 0 .25em .45em;
+					border-color: transparent transparent transparent @red;
+				}
+			}
+		}
+	}
+
+	.done{
+		overflow-y: scroll;
+		display: block;
+		position: relative;
+		width: 90%;
+		height: 13em;
+		margin: 1.5em auto;
+		background: @fadeBlack;
+		ol{
+			list-style: none;
+			font-size: 1.1em;
+			line-height: 1.15em;
+			li{
+				padding: 0 3em;
+				font-size: 0.8em;
+				&:nth-child(even){ background: fade(@white,5); }
+			}
+		}
+	}
+
+	.btn{
+		cursor: pointer;
+		display: block;
+		position: fixed;
+		bottom: 0.6em;
+		left: 0;
+		width: 100%;
+		padding: 0.2em 1em;
+		line-height: 1;
+		font-size: 2.5em;
+		color: @white;
+		background: @red;
+		&:hover{ background: mix(@white,@red,15); }
+	}
+}
+
+
+
+
+@media screen 
+and (min-width:460px)
+{
+	#skatedice .alias,
+	#skatedice .done{
+		max-width: 460px;
+	}
+	#skatedice .btn{
+		position: relative;
+		top: 0;
+		left: 0;
+		max-width: 40%;
+		margin: 0 auto;
+	}
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape)
+{
+	.header{
+		padding:0.7em 1.7em;
+	}
+	#skatedice .trick{
+		display: inline-block;
+		vertical-align: middle;
+		width: 49%;
+	}
+	#skatedice .done{
+		display: inline-block;
+		vertical-align: middle;
+		width: 50%;
+		height: 10em;
+		margin: 0 auto;
+	}
+	#skatedice .dice .dgroup{
+		display: block;
+		width: auto;
+	}
+	#skatedice .dice .die{
+		margin: 0 0.04em;
+	}
+	#skatedice .alias{
+		font-size:1.2em;
+		margin: 0 auto;
+	}
+	#skatedice .btn{
+		font-size: 2em;
+	}
+}
