@@ -1,6 +1,7 @@
 # skatedice
 
 A HTML5 project to generate skateboard tricks.
+http://lochieaxon.com/awkward/skatedice/
 
 ## TODO:
 
