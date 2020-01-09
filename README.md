@@ -1,7 +1,6 @@
 # skatedice
 
 A HTML5 project to generate skateboard tricks.
-http://awkwardskateco.com/dice/
 
 ## TODO:
 
